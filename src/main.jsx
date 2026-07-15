@@ -40,18 +40,20 @@ const abyssLore=[
 ];
 
 function App(){
- const[truth,setTruth]=useState(false),[sound,setSound]=useState(false),[copied,setCopied]=useState(false),[price,setPrice]=useState(0.0000069),[popups,setPopups]=useState([1,2]),[chat,setChat]=useState(0),[depth,setDepth]=useState(12); const abyssRef=useRef(null);
+ const[truth,setTruth]=useState(false),[sound,setSound]=useState(false),[copied,setCopied]=useState(false),[price,setPrice]=useState(0.0000069),[popups,setPopups]=useState([1,2]),[chat,setChat]=useState(0),[depth,setDepth]=useState(12); const abyssRef=useRef(null),songRef=useRef(null);
  useEffect(()=>{const t=setInterval(()=>setPrice(p=>Math.max(.0000001,p*(1+(Math.random()-.42)*.045))),900);return()=>clearInterval(t)},[]);
  useEffect(()=>{let last=0;const move=e=>{if(Date.now()-last<70)return;last=Date.now();const g=document.createElement('img');g.src='/assets/robin-neon-smiley.png';g.className='cursor-gem';g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';document.body.appendChild(g);setTimeout(()=>g.remove(),850)};window.addEventListener('mousemove',move);return()=>window.removeEventListener('mousemove',move)},[]);
  useEffect(()=>{const t=setInterval(()=>setChat(c=>(c+1)%5),2400);return()=>clearInterval(t)},[]);
  useEffect(()=>{const t=setInterval(()=>{const c=document.createElement('img');c.src='/assets/robin-neon-smiley.png';c.className='raincoin';c.style.left=Math.random()*96+'vw';c.style.width=(22+Math.random()*38)+'px';document.body.appendChild(c);setTimeout(()=>c.remove(),4200)},480);return()=>clearInterval(t)},[]);
  useEffect(()=>{const seq=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let i=0;const k=e=>{i=e.key===seq[i]?i+1:0;if(i===seq.length){document.body.classList.toggle('maximum');alert('ROBIN MODE 69 UNLOCKED');i=0}};addEventListener('keydown',k);return()=>removeEventListener('keydown',k)},[]);
  useEffect(()=>{if(!abyssRef.current)return;const o=new IntersectionObserver(([e])=>{if(e.isIntersecting)setDepth(d=>Math.min(69,d+6))},{rootMargin:'900px'});o.observe(abyssRef.current);return()=>o.disconnect()},[]);
- const noise=()=>{setSound(true);const A=window.AudioContext||window.webkitAudioContext;if(!A)return;const c=new A();for(let i=0;i<9;i++){const o=c.createOscillator(),g=c.createGain();o.type=i%2?'square':'sawtooth';o.frequency.value=110+i*69;g.gain.setValueAtTime(.035,c.currentTime+i*.08);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+i*.08+.18);o.connect(g).connect(c.destination);o.start(c.currentTime+i*.08);o.stop(c.currentTime+i*.08+.2)}};
+ const startSite=()=>{setTruth(true);const a=songRef.current;if(!a)return;a.volume=.58;a.play().then(()=>setSound(true)).catch(()=>setSound(false))};
+ const toggleSound=()=>{const a=songRef.current;if(!a)return;if(a.paused)a.play().then(()=>setSound(true)).catch(()=>setSound(false));else{a.pause();setSound(false)}};
  const copy=()=>{navigator.clipboard?.writeText(CA);setCopied(true);setTimeout(()=>setCopied(false),1200)};
  return <>
- {!truth&&<div className="truth"><div className="truthbox"><div className="terminalbar">ROBINHOODTRUMPGAMESTOP69INU.EXE</div><h2>DO YOU ACCEPT THE GREEN CANDLE?</h2><p>This website may cause irreversible financial literacy loss.</p><div><button onClick={()=>setTruth(true)}>YES, I AM NORMAL</button><button onClick={()=>setTruth(true)} className="red">NO, I AM EARLY</button></div></div></div>}
- <button className="sound" onClick={noise} aria-label="Play website sounds">{sound?<Volume2/>:<VolumeX/>}</button>
+ <audio ref={songRef} src="/assets/rhtg69i-site-theme.mp3" loop preload="auto" onPlay={()=>setSound(true)} onPause={()=>setSound(false)}/>
+ {!truth&&<div className="truth"><div className="truthbox"><div className="terminalbar">ROBINHOODTRUMPGAMESTOP69INU.EXE</div><h2>DO YOU ACCEPT THE GREEN CANDLE?</h2><p>This website may cause irreversible financial literacy loss.<br/><b>WARNING: OFFICIAL RHTG69I THEME WILL BEGIN.</b></p><div><button onClick={startSite}>YES, I AM NORMAL</button><button onClick={startSite} className="red">NO, I AM EARLY</button></div></div></div>}
+ <button className={`sound ${sound?'playing':''}`} onClick={toggleSound} aria-label={sound?'Mute the RHTG69I site song':'Play the RHTG69I site song'} title={sound?'MUTE OFFICIAL SITE SONG':'PLAY OFFICIAL SITE SONG'}>{sound?<Volume2/>:<VolumeX/>}</button>
  <div className="ticker"><span>*** POWER TO THE PLAYERS *** MIDNIGHT RELEASE AT SHERWOOD MALL *** GAMESTOP TRADE-IN VALUE: $6.90 OR 69,000 STORE POINTS *** PRINCE JOHN SHORT POSITION LIQUIDATED *** ROBIN NEON CANDLE DETECTED *** LITTLE JOHN IS HOLDING THE BAG *** </span></div>
  <img className="bandana-side leftbandana" src="/assets/robinhood-bandana.png" alt="Robin Hood mascot wearing the red Roaring Kitty bandana"/>
  <img className="bandana-side rightbandana" src="/assets/roaring-kitty-bandana.png" alt="Roaring Kitty cat wearing a red bandana"/>
