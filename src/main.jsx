@@ -5,6 +5,7 @@ import'./style.css';
 import{joinBelieverMainframe}from'./believer-counter';
 
 const CA='0x0000000000000000000000000000000000000069';
+const X_URL='https://x.com/RHTG69I';
 const links=[['WELCOME','#welcome'],['HOW 2 ACQUIRE','#buy'],['THE LORE','#lore'],['TOKENOMICS','#tokenomics'],['CHART GO UP','#chart'],['CURSED FILES','#memes']];
 const communityMemes=[
  ['/assets/community/slam-dunk.jpeg','DIAMOND-HANDS SLAM DUNK'],
@@ -56,7 +57,7 @@ function App(){
  <audio ref={songRef} src="/assets/rhtg69i-site-theme.mp3" loop preload="auto" onPlay={()=>setSound(true)} onPause={()=>setSound(false)}/>
  {!truth&&<div className="truth"><div className="truthbox"><div className="terminalbar">ROBINHOODTRUMPGAMESTOP69INU.EXE</div><h2>DO YOU ACCEPT THE GREEN CANDLE?</h2><p>This website may cause irreversible financial literacy loss.<br/><b>WARNING: OFFICIAL RHTG69I THEME WILL BEGIN.</b></p><div><button onClick={startSite}>YES, I AM NORMAL</button><button onClick={startSite} className="red">NO, I AM EARLY</button></div></div></div>}
  <button className={`sound ${sound?'playing':''}`} onClick={toggleSound} aria-label={sound?'Mute the RHTG69I site song':'Play the RHTG69I site song'} title={sound?'MUTE OFFICIAL SITE SONG':'PLAY OFFICIAL SITE SONG'}>{sound?<Volume2/>:<VolumeX/>}</button>
- <div className="ticker"><span>*** POWER TO THE PLAYERS *** MIDNIGHT RELEASE AT SHERWOOD MALL *** GAMESTOP TRADE-IN VALUE: $6.90 OR 69,000 STORE POINTS *** PRINCE JOHN SHORT POSITION LIQUIDATED *** ROBIN NEON CANDLE DETECTED *** LITTLE JOHN IS HOLDING THE BAG *** </span></div>
+ <div className="ticker"><span>*** POWER TO THE PLAYERS *** MIDNIGHT RELEASE AT SHERWOOD MALL *** <a href={X_URL} target="_blank" rel="noreferrer">LIVE SHERWOOD TRANSMISSIONS: @RHTG69I</a> *** GAMESTOP TRADE-IN VALUE: $6.90 OR 69,000 STORE POINTS *** PRINCE JOHN SHORT POSITION LIQUIDATED *** ROBIN NEON CANDLE DETECTED *** LITTLE JOHN IS HOLDING THE BAG *** </span></div>
  <img className="bandana-side leftbandana" src="/assets/robinhood-bandana.png" alt="Robin Hood mascot wearing the red Roaring Kitty bandana"/>
  <img className="bandana-side rightbandana" src="/assets/roaring-kitty-bandana.png" alt="Roaring Kitty cat wearing a red bandana"/>
  {popups.includes(1)&&<div className="winpopup pop1"><div>GameStop Trade-In Wizard <button onClick={()=>setPopups(p=>p.filter(x=>x!==1))}>X</button></div><p>YOUR PORTFOLIO IS WORTH $3.47 STORE CREDIT.</p><button onClick={()=>alert('POWERUP REWARDS APPLIED. RECEIPT LENGTH: 69 FEET.')}>ACCEPT TRADE</button></div>}
@@ -64,11 +65,12 @@ function App(){
  {popups.includes(3)&&<div className="winpopup pop3"><div>ERROR 420 <button onClick={()=>setPopups(p=>p.filter(x=>x!==3))}>X</button></div><p>Prize printer is out of ink.<br/>Buy RHTG69I instead.</p></div>}
  <main>
   <div className="webmaster">WELCOME TO MY HOMEPAGE!!!!! <span>UNDER CONSTRUCTION SINCE 2009</span></div>
-  <nav>{links.map(([t,h])=><a href={h} key={t}>{t}</a>)}<a href="#buy">BUY THE DIP</a></nav>
+  <nav>{links.map(([t,h])=><a href={h} key={t}>{t}</a>)}<a href="#buy">BUY THE DIP</a><a className="xnav" href={X_URL} target="_blank" rel="noreferrer">X TRANSMISSION ↗</a></nav>
   <section id="welcome" className="hero">
    <div className="eyebrow">THE PEOPLE'S INFINITE LIQUIDITY EVENT</div>
    <h1><span>ROBINHOOD</span><span>TRUMP</span><span>GAMESTOP</span><span>69INU</span></h1>
    <p className="tickername">TICKER: $RHTG69I &nbsp; // &nbsp; OFFICIAL SITE: <a href="https://rhtg69i.com/">RHTG69I.COM</a></p>
+   <a className="xsignal" href={X_URL} target="_blank" rel="noreferrer"><span>● LIVE</span> THE FOX IS POSTING // @RHTG69I // DO NOT TRUST THE TIMELINE <ArrowUpRight/></a>
    <div className="gifrow"><img src="/assets/robin-neon-smiley.png"/><img src="/assets/robin-neon-smiley.png"/><span>POWER TO THE SHERWOOD PLAYERS</span><img src="/assets/robin-neon-smiley.png"/><img src="/assets/robin-neon-smiley.png"/></div>
    <div className="heroimg"><img src="/assets/rhtg69i-deepfried.png" alt="Malformed Donald Trump Robin Hood cutout riding with a distorted Shiba over a corrupted stock chart"/><div className="stamp">CERTIFIED<br/>69% REAL</div></div>
    <div className="contract"><b>THE SACRED NUMBERS:</b><code>{CA}</code><button onClick={copy}><Copy/>{copied?'COPIED. PROBABLY.':'COPY CONTRACT'}</button></div>
@@ -100,5 +102,5 @@ function App(){
   <section className="guestbook"><h2>SIGN MY GUESTBOOK</h2><textarea defaultValue={'dear webmaster, this coin changed my life...'}></textarea><button onClick={()=>alert('GUESTBOOK FULL. TRY AGAIN IN 2009.')}>SUBMIT 2 INTERNET</button><div className="counter">BELIEVER NUMBER <b>{believers.total==null?'---------':String(believers.total).padStart(9,'0')}</b> // ONLINE <b>{believers.online==null?'---':String(believers.online).padStart(3,'0')}</b></div><p className="awards">[ LIVE SUPABASE LEDGER ] [ REALTIME FOREST PRESENCE ] [ GEOCITIES SURVIVOR ] [ NO CSS VALIDATION ]</p></section>
   <footer><div className="gifrow"><img src="/assets/robin-neon-smiley.png"/><img src="/assets/robin-neon-smiley.png"/><img src="/assets/robin-neon-smiley.png"/></div><h2>ROBINHOODTRUMPGAMESTOP69INU</h2><p><b>$RHTG69I // <a href="https://rhtg69i.com/">RHTG69I.COM</a></b></p><p>A parody meme project. Not affiliated with Robinhood Markets, Donald Trump, GameStop, Disney, any fox, any dog, or any forest with securities jurisdiction.</p><p>© 2069 SHERWOOD GAMESTOP INTERNET DEPARTMENT</p><p>EMAIL THE WEBMASTER: powerupfox69@rhtg69i.com</p></footer>
   <section className="abyss"><div className="pointofreturn">END OF OFFICIAL WEBSITE<br/><small>EVERYTHING BELOW THIS LINE WAS RECOVERED FROM THE WEBMASTER'S CONSPIRACY ARCHIVE</small></div>{Array.from({length:depth},(_,i)=>{const m=communityMemes[i%communityMemes.length],l=abyssLore[i%abyssLore.length],cycle=Math.floor(i/abyssLore.length)+1;return <div className={`depth depth${i%9}`} key={i} style={{'--d':i}}><div className="corruptbar">CASE_FILE_{String(i+1).padStart(3,'0')}.TXT // REVISION {cycle} // {i%3?'NOTTINGHAM SIGNAL INTERCEPTED':'DOCUMENT PARTIALLY EATEN BY DOG'}</div><h3>{l.title}</h3><div className="corruptcontent"><img src={m[0]} alt="progressively corrupted evidence from the RHTG69I conspiracy archive"/><div className="lorefile"><div className="classified">CLASSIFIED // SHERWOOD EYES ONLY // COPY {cycle}</div><p>{l.body}</p><p className="proof">{l.proof}</p><div className="redactions">████ ███ GAMESTOP █████ 0069 ████ ROBIN ███████ HOOD</div><button onClick={()=>alert(`CASE ${i+1}: THE ARCHIVE HAS RECORDED THAT YOU BELIEVE IT`)}>ACKNOWLEDGE EVIDENCE #{i+1}</button></div></div><div className="minimarquee">CONNECT THE RECEIPTS FOLLOW THE FOX ROTATE THE CHART THE MALL KNOWS RHTG69I.COM</div></div>})}<div className="loadingabyss" ref={abyssRef}>{depth<69?'DECRYPTING MORE CASE FILES...':'FINAL FILE CORRUPTED. THE COIN HAS FINISHED READING YOU.'}</div></section>
- </main></>}
+ </main><a className="xfixed" href={X_URL} target="_blank" rel="noreferrer" aria-label="Follow RHTG69I on X"><b>X</b><span>@RHTG69I<br/>SIGNAL FOUND</span></a></>}
 createRoot(document.getElementById('root')).render(<App/>);
