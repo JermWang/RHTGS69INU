@@ -4,7 +4,7 @@ import{Copy,Volume2,VolumeX,ArrowUpRight}from'lucide-react';
 import'./style.css';
 import{joinBelieverMainframe}from'./believer-counter';
 
-const CA='0x0000000000000000000000000000000000000069';
+const CA='0x8e03e2f332c50bf02058826f29d9b3b4c0057777';
 const X_URL='https://x.com/RHTG69I';
 const TG_URL='https://t.me/RHTG69I';
 const links=[['WELCOME','#welcome'],['HOW 2 ACQUIRE','#buy'],['THE LORE','#lore'],['TOKENOMICS','#tokenomics'],['CHART GO UP','#chart'],['CURSED FILES','#memes']];
