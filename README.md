@@ -1,6 +1,8 @@
 # RobinHoodTrumpGameStop69Inu
 
-The deliberately chaotic, early-internet home of **RobinHoodTrumpGameStop69Inu** (`$RHTGS69`).
+The deliberately chaotic, early-internet home of **RobinHoodTrumpGameStop69Inu** (`$RHTG69I`).
+
+Official website: [RHTG69I.com](https://rhtg69i.com/)
 
 ## Run locally
 
