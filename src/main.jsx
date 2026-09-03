@@ -134,7 +134,7 @@ function App(){
  const bump=()=>{setBumps(b=>b+1);setPosts(p=>[...p,{no:p[p.length-1].no+1+Math.floor(Math.random()*4),date:chanDate(new Date()),text:['bump','bumping for the fox','>page 10\nnot today sheriff','bump. it is still twelve.'][bumps%4]}])};
  const images=posts.filter(p=>p.file).length;
  return <>
- <audio ref={songRef} src="/assets/rhtg69i-site-theme.mp3" loop preload="auto" onPlay={()=>setSound(true)} onPause={()=>setSound(false)}/>
+ <audio ref={songRef} src="/assets/rhtg69i-site-theme.mp3" preload="auto" onPlay={()=>setSound(true)} onPause={()=>setSound(false)} onEnded={()=>setSound(false)}/>
  {flash&&<div className="subliminal" aria-hidden="true">{flash}</div>}
  {!truth&&<div className="truth"><div className="truthbox"><div className="terminalbar">ROBINHOODTRUMPGAMESTOP69INU.EXE</div><h2>DO YOU ACCEPT THE GREEN CANDLE?</h2><p>This website may cause irreversible financial literacy loss.<br/><b>WARNING: OFFICIAL RHTG69I THEME WILL BEGIN.</b></p><div><button onClick={startSite}>YES, I AM GAY</button><button onClick={startSite} className="red">NO, I AM EARLY</button></div><button className="sheriffbtn" onClick={()=>alert('ACCESS DENIED.\nSHERIFF DETECTED.\nLITTLE JOHN HAS BEEN NOTIFIED.')}>I AM THE SHERIFF</button><small className="fineprint">BY ENTERING YOU CONFIRM YOU ARE NOT A GLOWIE, A HEDGIE, OR THE SHERIFF OF NOTTINGHAM. THIS SITE IS BEST VIEWED AT 800x600 WITH THE LIGHTS OFF. ABSOLUTELY NO REFUNDS. ABSOLUTELY NO SELL BUTTON.</small></div></div>}
  <button className={`sound ${sound?'playing':''}`} onClick={toggleSound} aria-label={sound?'Mute the RHTG69I site song':'Play the RHTG69I site song'} title={sound?'MUTE OFFICIAL SITE SONG':'PLAY OFFICIAL SITE SONG'}>{sound?<Volume2/>:<VolumeX/>}</button>
