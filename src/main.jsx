@@ -1,10 +1,10 @@
 import React,{useState,useEffect,useRef} from 'react';
 import{createRoot}from'react-dom/client';
-import{Copy,Volume2,VolumeX,ArrowUpRight}from'lucide-react';
+import{Volume2,VolumeX,ArrowUpRight}from'lucide-react';
 import'./style.css';
 import{joinBelieverMainframe}from'./believer-counter';
 
-const CA='0x8e03e2f332c50bf02058826f29d9b3b4c0057777';
+const CA='COMING SOON';
 const X_URL='https://x.com/RHTG69INU';
 const links=[['WELCOME','#welcome'],['HOW 2 ACQUIRE','#buy'],['/biz/ THREAD','#thread'],['THE LORE','#lore'],['TOKENOMICS','#tokenomics'],['CHART GO UP','#chart'],['CURSED FILES','#memes']];
 const communityMemes=[
@@ -65,7 +65,7 @@ const bizThread=[
 what did he mean by this
 
 thread theme: rhtg69i.com
-CA: ${CA}
+CA: coming soon. the fox has not printed the receipt yet. anyone posting a CA before then is the sheriff.
 do not buy. do not sell. simply believe.`},
  {time:T+'16:21:04',text:`${q(0)}\nop this is a wendy's`},
  {time:T+'16:21:37',text:`${q(0)}\n>buying a coin named after four (4) separate things\nngmi\n\nanyway how much do I put in`},
@@ -114,7 +114,7 @@ function Post({p,yours}){
 }
 
 function App(){
- const[truth,setTruth]=useState(false),[sound,setSound]=useState(false),[copied,setCopied]=useState(false),[price,setPrice]=useState(0.0000069),[popups,setPopups]=useState([1,2]),[chat,setChat]=useState(0),[depth,setDepth]=useState(12),[believers,setBelievers]=useState({status:'connecting',total:null,online:null}),[flash,setFlash]=useState(null),[posts,setPosts]=useState(bizThread),[yours,setYours]=useState([]),[replyBody,setReplyBody]=useState(''),[replyOpt,setReplyOpt]=useState(''),[lastReply,setLastReply]=useState(null),[bumps,setBumps]=useState(0); const abyssRef=useRef(null),songRef=useRef(null);
+ const[truth,setTruth]=useState(false),[sound,setSound]=useState(false),[price,setPrice]=useState(0.0000069),[popups,setPopups]=useState([1,2]),[chat,setChat]=useState(0),[depth,setDepth]=useState(12),[believers,setBelievers]=useState({status:'connecting',total:null,online:null}),[flash,setFlash]=useState(null),[posts,setPosts]=useState(bizThread),[yours,setYours]=useState([]),[replyBody,setReplyBody]=useState(''),[replyOpt,setReplyOpt]=useState(''),[lastReply,setLastReply]=useState(null),[bumps,setBumps]=useState(0); const abyssRef=useRef(null),songRef=useRef(null);
  useEffect(()=>{const t=setInterval(()=>setPrice(p=>Math.max(.0000001,p*(1+(Math.random()-.42)*.045))),900);return()=>clearInterval(t)},[]);
  useEffect(()=>{let last=0;const move=e=>{if(Date.now()-last<70)return;last=Date.now();const g=document.createElement('img');g.src='/assets/robin-neon-smiley.png';g.className='cursor-gem';g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';document.body.appendChild(g);setTimeout(()=>g.remove(),850)};window.addEventListener('mousemove',move);return()=>window.removeEventListener('mousemove',move)},[]);
  useEffect(()=>{const t=setInterval(()=>setChat(c=>(c+1)%chatLines.length),2400);return()=>clearInterval(t)},[]);
@@ -129,7 +129,6 @@ function App(){
  useEffect(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const msgs=['BUY','69','THE FOX SEES YOU','(You)','HOLD','SHERWOOD','WAKE UP','READ THE RECEIPT','GLOW','TWELVE'];let t1,t2;const loop=()=>{t1=setTimeout(()=>{setFlash(msgs[Math.floor(Math.random()*msgs.length)]);document.body.classList.add('glitch');t2=setTimeout(()=>{setFlash(null);document.body.classList.remove('glitch')},110);loop()},9000+Math.random()*12000)};loop();return()=>{clearTimeout(t1);clearTimeout(t2);document.body.classList.remove('glitch')}},[]);
  const startSite=()=>{setTruth(true);const a=songRef.current;if(!a)return;a.volume=.58;a.play().then(()=>setSound(true)).catch(()=>setSound(false))};
  const toggleSound=()=>{const a=songRef.current;if(!a)return;if(a.paused)a.play().then(()=>setSound(true)).catch(()=>setSound(false));else{a.pause();setSound(false)}};
- const copy=()=>{navigator.clipboard?.writeText(CA);setCopied(true);setTimeout(()=>setCopied(false),1200)};
  const postReply=e=>{e.preventDefault();const body=replyBody.trim();if(!body)return;const sage=/sage/i.test(replyOpt);const no=posts[posts.length-1].no+1+Math.floor(Math.random()*7);const mine={no,date:chanDate(new Date()),text:body.slice(0,2000),sage};setPosts(p=>[...p,mine]);setYours(y=>[...y,no]);setReplyBody('');setReplyOpt('');
   setTimeout(()=>{const pool=sage?['sage goes in all fields newfriend','>sage\n>on a thread that has been 69 minutes from archive for years\nkek']:autoReplies;const bot={no:no+1+Math.floor(Math.random()*5),date:chanDate(new Date()),text:`>>${no}\n${pool[Math.floor(Math.random()*pool.length)]}`};setPosts(p=>[...p,bot]);setLastReply(bot);setPopups(p=>p.includes(4)?p:[...p,4])},2600+Math.random()*3400)};
  const bump=()=>{setBumps(b=>b+1);setPosts(p=>[...p,{no:p[p.length-1].no+1+Math.floor(Math.random()*4),date:chanDate(new Date()),text:['bump','bumping for the fox','>page 10\nnot today sheriff','bump. it is still twelve.'][bumps%4]}])};
@@ -157,7 +156,8 @@ function App(){
    <a className="xsignal" href={X_URL} target="_blank" rel="noreferrer"><span>● LIVE</span> THE FOX IS POSTING // @RHTG69INU // DO NOT TRUST THE TIMELINE <ArrowUpRight/></a>
    <div className="gifrow"><img src="/assets/robin-neon-smiley.png"/><img src="/assets/robin-neon-smiley.png"/><span>POWER TO THE SHERWOOD PLAYERS</span><img src="/assets/robin-neon-smiley.png"/><img src="/assets/robin-neon-smiley.png"/></div>
    <div className="heroimg"><img src="/assets/rhtg69i-deepfried.png" alt="Malformed Donald Trump Robin Hood cutout riding with a distorted Shiba over a corrupted stock chart"/><div className="stamp">CERTIFIED<br/>69% REAL</div><div className="filename">rhtg69i_deepfried_FINAL_v69(2).png (69 KB, 1536x1024)</div></div>
-   <div className="contract"><b>THE SACRED NUMBERS:</b><code>{CA}</code><button onClick={copy}><Copy/>{copied?'COPIED. PROBABLY.':'COPY CONTRACT'}</button></div>
+   <div className="contract"><b>THE SACRED NUMBERS:</b><code className="soon">{CA}</code><button onClick={()=>alert('THE CA DROPS WHEN THE MALL OPENS.
+FOLLOW @RHTG69INU. TRUST NO OTHER RECEIPT.')}>WHERE IS THE CA?</button></div>
    <section className={`believer-mainframe ${believers.status}`} aria-live="polite"><div className="believer-bar">RHTG69I_BELIEVER_MAINFRAME.EXE <span>{believers.status==='live'?'● DATABASE POSSESSED':'○ SEEKING SIGNAL'}</span></div><div className="believer-screens"><div><small>TOTAL BELIEVERS // ALL TIME</small><b>{believers.total==null?'---------':String(believers.total).padStart(9,'0')}</b><em>PERMANENTLY ETCHED INTO THE SHERWOOD LEDGER</em></div><div className="online-believers"><small>CURRENTLY BELIEVING</small><b><i/>{believers.online==null?'---':String(believers.online).padStart(3,'0')}</b><em>LIVE FROM THE FOREST RIGHT NOW</em></div></div><p>{believers.status==='live'?'YOUR ANONYMOUS BROWSER HAS BEEN COUNTED. HISTORY CANNOT BE UNDONE.':believers.status==='unconfigured'?'DATABASE KEYS MISSING // THE PROPHECY IS RUNNING OFFLINE':believers.status==='error'?'SHERIFF BLOCKED THE DATABASE TUNNEL // RETRYING NEXT VISIT':'DIALING SUPABASE THROUGH A 56K MODEM...'}</p></section>
    <div className="market"><div><small>LIVE-ish PRICE</small><b>${price.toFixed(9)}</b></div><div><small>MARKET CAP</small><b>∞ + $69</b></div><div><small>HOLDERS</small><b>THE ENTIRE SHERWOOD FOREST</b></div></div>
    <div className="hoodterminal"><div className="hoodbar">ROBINHOOD LEGEND: SHERWOOD MARKET EDITION <span>[_][□][X]</span></div><div className="hoodbody"><aside><b>INVESTING</b><p>$69,420.69</p><small>+$6,969.69 TODAY</small><hr/><a>Stocks</a><a>Options</a><a>PowerUp Rewards</a><a>GameStop Preorders</a></aside><section><h3>RHTG69I</h3><div className="microchart">_╱╲_╱╲╱╲__╱╲╱╲╱╲╱╲╱╲╱╲╱╲╱</div><p>1D &nbsp; 1W &nbsp; MIDNIGHT RELEASE &nbsp; SHERWOOD</p></section><form onSubmit={e=>{e.preventDefault();alert('ORDER PRINTED ON A 69-FOOT GAMESTOP RECEIPT')}}><b>Buy RHTG69I</b><label>Dollars<input defaultValue="$69.00"/></label><label>Order type<select defaultValue="destiny"><option value="destiny">Market Destiny</option><option>Pre-Owned Limit</option><option>Nottingham Stop Loss</option></select></label><button>POWER TO THE ORDER</button></form></div></div>

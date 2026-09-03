@@ -111,3 +111,4 @@ body.saged{filter:invert(1) hue-rotate(180deg);transition:filter .1s}
 .panel .quote{color:#789922;font-family:'Courier New',monospace}
 @media(prefers-reduced-motion:reduce){.construction,.schizostrip span,.b88,.pop4,.subliminal{animation:none!important}}
 @media(max-width:700px){.bizboard{margin:0 0 20px;transform:none}.post.reply{margin-left:6px;min-width:0}.postMessage{margin:.8em 10px .8em .6em}.fileThumb{margin-right:12px}.fileThumb img{max-width:110px;max-height:110px}.op .fileThumb img{max-width:170px;max-height:170px}.postform textarea,.postform input{max-width:none}.archived{display:block;margin:4px 0 0}.schizostrip{margin:10px -8px}.subliminal{font-size:80px}}
+.contract .soon{font:bold clamp(22px,4vw,44px) Impact,sans-serif;letter-spacing:3px;color:#c3f53c;animation:blink .6s steps(1) infinite;text-shadow:3px 3px #003cff}
