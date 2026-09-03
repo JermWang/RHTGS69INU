@@ -1,8 +1,16 @@
 # RobinHoodTrumpGameStop69Inu
 
-The deliberately chaotic, early-internet home of **RobinHoodTrumpGameStop69Inu** (`$RHTG69I`).
+The deliberately chaotic, early-internet home of **RobinHoodTrumpGameStop69Inu** (`$RHTG69I`): a GeoCities-grade homepage with a live /biz/-style thread, greentext, (You)s, Windows popups, 88x31 badges, a webring, and a conspiracy archive that never ends.
 
-Official website: [RHTG69I.com](https://rhtg69i.com/)
+- Official website: [RHTG69I.com](https://rhtg69i.com/)
+- X: [@RHTG69INU](https://x.com/RHTG69INU)
+
+## Easter eggs
+
+- Type `sage`, `bump`, or `glow` anywhere on the page.
+- Konami code unlocks ROBIN MODE 69.
+- The thread's reply box works. Someone will reply. It is always the same fox.
+- Highlight the last line of the footer.
 
 ## Run locally
 
